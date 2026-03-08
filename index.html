@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bitcoin sin secretos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">Tecnológico de software</div>
+    <nav class="main-nav">
+      <a href="#hero">Inicio</a>
+      <a href="#confiar">¿Por qué confiar?</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#precio">Bitcoin hoy</a>
+      <a href="#inflacion">Inflación</a>
+      <a href="#historias">Historias</a>
+      <a href="#cierre">Cierre</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="section hero-section animate-on-scroll">
+      <div class="section-inner two-col">
+        <div class="hero-image">
+          <img src="img/bitcoin-creciendo.png" alt="Bitcoin creciendo" class="big-img">
+        </div>
+        <div class="hero-text">
+          <p class="hero-tag">Tecnológico de software</p>
+          <h1 class="hero-title">BITCOIN SIN SECRETOS</h1>
+          <p class="hero-subtitle">Información real, sin hype y sin miedo. Tú decides.</p>
+          <button class="btn btn-white" data-scroll="#confiar">Descubre más</button>
+          <p class="hero-footnote">Proyecto educativo para el Hackaton Bitcoin México 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿POR QUÉ CONFIAR? -->
+    <section id="confiar" class="section confiar-section animate-on-scroll">
+      <div class="section-inner two-col">
+        <div class="confiar-image">
+          <img src="img/bitcoin-lap.png" alt="Análisis financiero" class="big-img">
+        </div>
+        <div class="confiar-text">
+          <h2 class="section-title">¿Por qué confiar?</h2>
+          <p class="section-subtitle">
+            Muchas personas dicen que Bitcoin es riesgoso, pero el peso se ha devaluado año tras año.
+          </p>
+          <p class="body-text">
+            Bitcoin ha sido una de las monedas más fuertes de la última década y puede ayudarte a proteger tus ahorros.
+          </p>
+          <p class="body-text">
+            Déjame ayudarte a entender mejor y tomar decisiones informadas.
+          </p>
+          <button class="btn btn-white" data-scroll="#simulador">Cómo te afecta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSOS -->
+    <section id="cursos" class="section cursos-section animate-on-scroll">
+      <div class="section-inner">
+        <h2 class="section-title center">Déjame mostrarte</h2>
+        <p class="section-subtitle center">Aprende paso a paso con módulos claros y honestos.</p>
+
+        <div class="cursos-grid">
+
+          <article class="curso-card dark-card">
+            <img src="img/contrato-digital.png" alt="¿Qué es Bitcoin?" class="curso-icon">
+            <h3>¿Qué es Bitcoin?</h3>
+            <p>Entiende lo básico sin tecnicismos.</p>
+            <button class="btn btn-outline" onclick="location.href='pages/curso-que-es-bitcoin.html'">Aprender más</button>
+          </article>
+
+          <article class="curso-card dark-card">
+            <img src="img/bitcoin-mexico.png" alt="Bitcoin en México" class="curso-icon">
+            <h3>Bitcoin en México</h3>
+            <p>Cómo afecta a tu vida diaria.</p>
+            <button class="btn btn-outline" onclick="location.href='pages/curso-bitcoin-mexico.html'">Aprender más</button>
+          </article>
+
+          <article class="curso-card dark-card">
+            <img src="img/balanza.png" alt="Riesgos y beneficios" class="curso-icon">
+            <h3>Riesgos y beneficios</h3>
+            <p>Información honesta y equilibrada.</p>
+            <button class="btn btn-outline" onclick="location.href='pages/curso-riesgos-beneficios.html'">Aprender más</button>
+          </article>
+
+        </div>
+
+        <div class="cursos-actions center">
+          <button class="btn btn-white" data-scroll="#simulador">Curso completo</button>
+          <button class="btn btn-outline" data-scroll="#precio">Seguir aprendiendo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR -->
+     
+    <section id="simulador" class="section simulador-section animate-on-scroll">
+      <div class="section-inner two-col">
+
+        <div class="simulator-text">
+          <h2 class="section-title">¿Qué habría pasado si hubieras invertido?</h2>
+          <p class="section-subtitle">Descubre cómo habría crecido tu dinero con datos reales.</p>
+
+          <div class="simulator-panel dark-card">
+            <div class="form-group">
+              <label for="anio">Selecciona el año</label>
+              <select id="anio">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+              <label for="monto">Selecciona la cantidad (MXN)</label>
+              <input type="number" id="monto" min="100" step="100" placeholder="Ej. 2000" />
+            </div>
+
+            <button class="btn btn-white full-width" id="btn-simular">Iniciar la simulación</button>
+
+            <div class="simulator-result">
+              <p>Año: <span id="resultado-anio">-</span></p>
+              <p>Inversión: <span id="resultado-inversion">$0</span></p>
+              <p>Hoy tendrías: <span id="resultado-monto">$0</span></p>
+              <p>Ganancia: <span id="resultado-porcentaje">0%</span></p>
+            </div>
+
+            <p class="simulator-note">Bitcoin no garantiza ganancias, pero su historial es claro.</p>
+          </div>
+          <canvas id="graficaBitcoin" class="big-chart"></canvas>
+
+        </div>
+
+        <div class="simulator-visual">
+          <img src="img/bitcoin-creciendo.png" alt="Gráfica Bitcoin" class="big-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BITCOIN HOY -->
+    <section id="precio" class="section precio-section animate-on-scroll">
+      <div class="section-inner two-col">
+
+        <div class="precio-text">
+          <h2 class="section-title">Bitcoin hoy en México</h2>
+          <p class="section-subtitle">Datos en tiempo real para entender el mercado.</p>
+
+          <div class="price-card dark-card">
+            <p class="price-label">Precio actual:</p>
+            <p class="price-value" id="precio-actual">-</p>
+
+            <p class="price-label">Cambio 24h:</p>
+            <p class="price-change" id="precio-cambio">-</p>
+
+            <p class="price-source">Fuente: CoinGecko</p>
+          </div>
+
+          <button class="btn btn-outline" data-scroll="#inflacion">Ver inflación</button>
+        </div>
+
+        <div class="precio-image">
+          <img src="img/bitcoin-mexico.png" alt="Bitcoin México" class="big-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INFLACIÓN VS BITCOIN -->
+    <section id="inflacion" class="section inflacion-section animate-on-scroll">
+      <div class="section-inner two-col">
+
+        <div class="inflacion-text">
+          <h2 class="section-title">Inflación vs Bitcoin</h2>
+          <p class="section-subtitle">Una comparación visual del peso mexicano y Bitcoin.</p>
+
+          <div class="inflacion-cards">
+            <div class="inflacion-card dark-card">
+              <h3>+24.5% Inflación</h3>
+              <p>El peso ha perdido poder adquisitivo constantemente.</p>
+            </div>
+
+            <div class="inflacion-card dark-card">
+              <h3>Bitcoin</h3>
+              <p>Uno de los activos con mejor rendimiento.</p>
+            </div>
+
+            <div class="inflacion-card dark-card">
+              <h3>México</h3>
+              <p>La inflación afecta tu ahorro y salario.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-white" data-scroll="#comparacion">Comparar</button>
+        </div>
+
+        <div class="inflacion-image">
+          <img src="img/inflacion-bitcoin.png" alt="Inflación Bitcoin" class="big-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GRÁFICA DE COMPARACIÓN -->
+    <section id="comparacion" class="section comparacion-section animate-on-scroll">
+      <div class="section-inner two-col">
+
+        <div class="comparacion-image">
+          <img src="img/comparacion.png" alt="Gráfica comparación" class="big-img">
+        </div>
+
+        <div class="comparacion-text">
+          <h2 class="section-title">Comparación de los últimos 10 años</h2>
+          <p class="section-subtitle">No se trata de volverte rico. Se trata de proteger tu dinero.</p>
+          <button class="btn btn-white" data-scroll="#simulador">Iniciar simulación</button>
+          <button class="btn btn-outline" data-scroll="#historias">Seguir</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HISTORIAS -->
+    <section id="historias" class="section historias-section animate-on-scroll">
+      <div class="section-inner two-col">
+
+        <div class="historias-text">
+          <h2 class="section-title">Historias increíbles con Bitcoin</h2>
+          <p class="section-subtitle">Hechos reales que muestran su impacto.</p>
+
+          <div class="historias-list">
+
+            <article class="historia-item">
+              <h3>Las pizzas más caras</h3>
+              <p>Pagaron con Bitcoin cuando valía casi nada… hoy valdría millones.</p>
+              <button class="btn btn-outline">Ver historia</button>
+            </article>
+
+            <article class="historia-item">
+              <h3>Bitcoin limitado</h3>
+              <p>Nadie puede imprimir más Bitcoin. Solo existirán 21 millones.</p>
+              <button class="btn btn-outline">Ver historia</button>
+            </article>
+
+            <article class="historia-item">
+              <h3>El hombre que perdió 7,000 BTC</h3>
+              <p>Olvidó su contraseña y nunca pudo recuperarlos.</p>
+              <button class="btn btn-outline">Ver historia</button>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="historias-image">
+          <img src="img/historia.png" alt="Personas conversando" class="big-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section id="cierre" class="section cierre-section animate-on-scroll">
+      <div class="section-inner two-col">
+
+        <div class="cierre-image">
+          <img src="img/trato-hecho.png" alt="Acuerdo" class="big-img">
+        </div>
+
+        <div class="cierre-text">
+          <h2 class="section-title">Da el siguiente paso</h2>
+          <p class="section-subtitle">Bitcoin no es magia. Es información, historia y matemática.</p>
+
+          <ul class="cierre-list">
+            <li>✅ Explorar los cursos</li>
+            <li>✅ Ir al simulador</li>
+            <li>✅ Comparar</li>
+          </ul>
+
+          <p class="body-text">La mejor decisión es la que tomas con información.</p>
+
+          <div class="cierre-actions">
+            <button class="btn btn-white" data-scroll="#cursos">Explorar cursos</button>
+            <button class="btn btn-outline" data-scroll="#simulador">Ir al simulador</button>
+          </div>
+
+          <p class="cierre-footnote">Proyecto educativo para el Hackathon Bitcoin México 2026.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>Bitcoin sin secretos · 2026 · Proyecto educativo</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
